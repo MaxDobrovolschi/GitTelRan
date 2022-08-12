@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><script type="text/javascript" async="" src="SQL%20Tryit%20Editor%20v1.6.1_files/localstore.js"></script>
+<title>SQL Tryit Editor v1.6</title>
+<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preload" href="https://www.w3schools.com/lib/fonts/fontawesome.woff2?14663396" as="font" type="font/woff2" crossorigin=""> 
+<link rel="preload" href="https://www.w3schools.com/lib/fonts/source-code-pro-v14-latin-regular.woff2" as="font" type="font/woff2" crossorigin=""> 
+<link rel="stylesheet" href="SQL%20Tryit%20Editor%20v1.6.1_files/w3schools30.css">
+<link rel="stylesheet" href="SQL%20Tryit%20Editor%20v1.6.1_files/codemirror.css">
+<script async="" src="SQL%20Tryit%20Editor%20v1.6.1_files/wrap.js"></script><script src="SQL%20Tryit%20Editor%20v1.6.1_files/752702112623808.js" async=""></script><script src="SQL%20Tryit%20Editor%20v1.6.1_files/identity.js" async=""></script><script type="text/javascript" async="" src="SQL%20Tryit%20Editor%20v1.6.1_files/fbevents.js"></script><script type="text/javascript" async="" src="SQL%20Tryit%20Editor%20v1.6.1_files/analytics.js"></script><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/config.js" async=""></script><script async="" src="SQL%20Tryit%20Editor%20v1.6.1_files/gtm.js"></script><script src="SQL%20Tryit%20Editor%20v1.6.1_files/codemirror.js"></script>
+<script src="SQL%20Tryit%20Editor%20v1.6.1_files/codemirror_sql.js"></script>
+<script src="SQL%20Tryit%20Editor%20v1.6.1_files/w3Database.js"></script>
+<!-- Google Tag Manager -->
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KTCFC3S');
+</script>
+<!-- End Google Tag Manager -->
+
+<script src="SQL%20Tryit%20Editor%20v1.6.1_files/uic.js"></script>
+<script data-cfasync="false" type="text/javascript">
+var k42 = false;
+
+k42 = true;
+
+</script>
+<script data-cfasync="false" type="text/javascript">
+    window.snigelPubConf = {
+    "adengine": {
+
+      "activeAdUnits": ["try_it_leaderboard"]
+
+  }
+}
+uic_r_a()
+</script>
+<script async="" data-cfasync="false" src="SQL%20Tryit%20Editor%20v1.6.1_files/loader.js" type="text/javascript"></script>
+<script>
+if (window.addEventListener) {              
+    window.addEventListener("resize", browserResize);
+} else if (window.attachEvent) {                 
+    window.attachEvent("onresize", browserResize);
+}
+var xbeforeResize = window.innerWidth;
+
+function browserResize() {
+    var afterResize = window.innerWidth;
+    if ((xbeforeResize < (970) && afterResize >= (970)) || (xbeforeResize >= (970) && afterResize < (970)) ||
+        (xbeforeResize < (728) && afterResize >= (728)) || (xbeforeResize >= (728) && afterResize < (728)) ||
+        (xbeforeResize < (468) && afterResize >= (468)) ||(xbeforeResize >= (468) && afterResize < (468))) {
+        xbeforeResize = afterResize;
+        
+        if (document.getElementById("adngin-try_it_leaderboard-0")) {
+                adngin.queue.push(function(){  adngin.cmd.startAuction(["try_it_leaderboard"]); });
+              }
+         
+    }
+}
+</script>
+<style>
+#tryitLeaderboard {
+    margin-top:5px;
+    margin-bottom:5px;    
+    text-align:center;
+    height:90px;
+}
+
+#resultSQL {
+    font-size:14px;
+    font-family:Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;
+    background-color:#E7E9EB;
+    height:auto;
+    width:auto;
+}
+#iframeResultSQL {
+    display:none;
+    background-color: #ffffff;
+    height:95%;
+    min-height:400px;
+    top:25px;
+    width:100%;
+    border:1px solid #d3d3d3;
+    border:none;
+}
+#divResultSQL {
+    background-color: #ffffff;
+    border:1px solid #d3d3d3;
+    border:none;
+    overflow:auto;
+}
+#textareaCodeSQL {
+    font-size:15px;
+    font-family:Consolas,"courier new";
+    height:140px;
+    width:100%;
+    border:1px solid #d3d3d3;
+    resize: none;
+}
+.CodeMirror.cm-s-default {
+  height:140px;
+}
+#footerSQL {
+    height:20px;
+    font-family:verdana;
+}
+#dbInfo {
+    height:auto;
+    xxcolor:#222222;
+    font-family:verdana;
+    font-size:12px;
+    text-align:center;
+    max-width:300px;
+    margin:auto;
+    position:relative;
+}
+@media (max-width:992px){
+  #dbInfo {
+    width:auto;
+    position:static;
+  }
+}
+.chromesupport,.iesupport,.safarisupport,.firefoxsupport,.operasupport {
+	width:20px; height:20px; float:left; margin-left:15px;background-repeat:no-repeat;
+}
+.iesupport		{background-image:url('/images/compatible_edge2020.gif');}
+.chromesupport	{background-image:url('/images/compatible_chrome2020.gif');}
+.firefoxsupport	{background-image:url('/images/incompatible_firefox2020.gif');}
+.safarisupport	{background-image:url('/images/compatible_safari2020.gif');}
+.operasupport	{background-image:url('/images/compatible_opera2020.gif');}
+</style>
+<script type="text/javascript" async="" src="SQL%20Tryit%20Editor%20v1.6.1_files/prebid.js"></script><script type="text/javascript" async="" src="SQL%20Tryit%20Editor%20v1.6.1_files/apstag.js"></script><script type="text/javascript" async="" src="SQL%20Tryit%20Editor%20v1.6.1_files/gpt.js"></script><script type="text/javascript" async="" src="SQL%20Tryit%20Editor%20v1.6.1_files/adngin.js"></script><script type="text/javascript" async="" src="SQL%20Tryit%20Editor%20v1.6.1_files/argus.js"></script><argprec0></argprec0><argprec1></argprec1><style type="text/css">.snigel-cmp-framework .sn-inner {background-color:#fffefe!important;}.snigel-cmp-framework .sn-b-def {border-color:#04aa6d!important;color:#04aa6d!important;}.snigel-cmp-framework .sn-b-def.sn-blue {color:#ffffff!important;background-color:#04aa6d!important;border-color:#04aa6d!important;}.snigel-cmp-framework .sn-selector ul li {color:#04aa6d!important;}.snigel-cmp-framework .sn-selector ul li:after {background-color:#04aa6d!important;}.snigel-cmp-framework .sn-footer-tab .sn-privacy a {color:#04aa6d!important;}.snigel-cmp-framework .sn-arrow:after,.snigel-cmp-framework .sn-arrow:before {background-color:#04aa6d!important;}.snigel-cmp-framework .sn-switch input:checked + span::before {background-color:#04aa6d!important;}#adconsent-usp-link {border: 1px solid #04aa6d!important;color:#04aa6d!important;}#adconsent-usp-banner-optout input:checked + .adconsent-usp-slider {background-color:#04aa6d!important;}#adconsent-usp-banner-btn {color:#ffffff;border: solid 1px #04aa6d!important;background-color:#04aa6d!important; }</style><script type="text/javascript" async="" charset="utf-8" src="SQL%20Tryit%20Editor%20v1.6.1_files/adconsent__tcfapi.js"></script><meta http-equiv="origin-trial" content="AzoawhTRDevLR66Y6MROu167EDncFPBvcKOaQispTo9ouEt5LvcBjnRFqiAByRT+2cDHG1Yj4dXwpLeIhc98/gIAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjYxMjk5MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A6+nc62kbJgC46ypOwRsNW6RkDn2x7tgRh0wp7jb3DtFF7oEhu1hhm4rdZHZ6zXvnKZLlYcBlQUImC4d3kKihAcAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjYxMjk5MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A/9La288e7MDEU2ifusFnMg1C2Ij6uoa/Z/ylwJIXSsWfK37oESIPbxbt4IU86OGqDEPnNVruUiMjfKo65H/CQwAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjYxMjk5MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><script src="SQL%20Tryit%20Editor%20v1.6.1_files/pubads_impl_2022080901.js" async=""></script><script src="SQL%20Tryit%20Editor%20v1.6.1_files/pubcid.min_002.js"></script><script src="SQL%20Tryit%20Editor%20v1.6.1_files/id5-api.js"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt"></script><script esp-signal="true" src="SQL%20Tryit%20Editor%20v1.6.1_files/pubcid.min.js"></script><script esp-signal="true" src="SQL%20Tryit%20Editor%20v1.6.1_files/esp_002.js"></script><script esp-signal="true" src="SQL%20Tryit%20Editor%20v1.6.1_files/esp.js"></script><script esp-signal="true" src="SQL%20Tryit%20Editor%20v1.6.1_files/publishertag.ids.js"></script><script esp-signal="true" src="SQL%20Tryit%20Editor%20v1.6.1_files/sync.min.js"></script><script esp-signal="true" src="SQL%20Tryit%20Editor%20v1.6.1_files/uid2-sdk-0.0.1b.js"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f_002.txt"></script><link rel="preload" href="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt" as="script"><script type="text/javascript" src="SQL%20Tryit%20Editor%20v1.6.1_files/f.txt"></script></head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTCFC3S"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<script>
+(
+function setThemeMode() {
+  var x = localStorage.getItem("preferredmode");
+  if (x == "dark") {
+    document.body.className += " darktheme darkpagetheme";
+  }
+})();
+</script>
+
+
+<div id="tryitLeaderboard" class="w3-white">
+<!-- TryitLeaderboard -->
+
+  <!--<pre>try_it_leaderboard, all: [320,50][728,90][468,60]</pre>-->
+  <div id="adngin-try_it_leaderboard-0" data-google-query-id="CPf3ua69wfkCFSLquwgdDJwAtw"><div id="google_ads_iframe_/22152718,16833175/sws-hb//w3schools.com//try_it_leaderboard_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22152718,16833175/sws-hb//w3schools.com//try_it_leaderboard_0" name="google_ads_iframe_/22152718,16833175/sws-hb//w3schools.com//try_it_leaderboard_0" title="3rd party ad content" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom;" role="region" aria-label="Advertisement" tabindex="0" data-google-container-id="2" data-load-complete="true" width="728" height="90" frameborder="0"></iframe></div></div>
+  <!-- adspace tryit-->
+ 
+</div>
+
+<div class="w3-container">
+  <div class="w3-row">
+    <div class="w3-col l10">
+      <div class="ws-grey" style="padding:15px;padding-bottom:40px;margin-bottom:40px;box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);">
+      <form method="post" target="view" id="tryitform" name="tryitform" onsubmit="validateForm();" action="https://tryit.w3schools.com/trysql_view.asp?x=0.9140580103301543">
+        <h3>SQL Statement:</h3>
+        <textarea id="textareaCodeSQL" style="display: none;" wrap="logical">SELECT AVG(Quantity) as averageProductQuantity
+		FROM OrderDetails;
+        </textarea><div class="CodeMirror cm-s-default CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 372px;"><textarea style="position: absolute; bottom: -1em; padding: 0px; width: 1px; height: 1em; outline: currentcolor none medium;" autocorrect="off" autocapitalize="none" spellcheck="false" tabindex="0" wrap="off"></textarea></div><div class="CodeMirror-vscrollbar" cm-not-content="true" style="width: 18px; pointer-events: none; bottom: 0px;"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true" style="height: 18px; pointer-events: none;"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1" draggable="true"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 30px; min-height: 76px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: currentcolor none medium;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors" style="visibility: hidden;"><div class="CodeMirror-cursor" style="left: 68px; top: 45px; height: 22.5px;">&nbsp;</div></div><div class="CodeMirror-code" style=""><pre class=" CodeMirror-line "><span><span class="cm-m-sql cm-keyword">SELECT</span><span class="cm-m-sql"> AVG(Quantity) </span><span class="cm-m-sql cm-keyword">as</span><span class="cm-m-sql"> averageProductQuantity</span></span></pre><pre class=" CodeMirror-line "><span><span class="cm-m-sql"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span></span><span class="cm-m-sql cm-keyword">FROM</span><span class="cm-m-sql"> OrderDetails;</span></span></pre><pre class=" CodeMirror-line "><span><span class="cm-m-sql">        </span></span></pre></div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; border-bottom: 0px solid transparent; top: 76px;"></div><div class="CodeMirror-gutters" style="display: none; height: 106px;"></div></div></div>
+        <p>Edit the SQL Statement, and click "Run SQL" to see the result.</p>
+        <input type="hidden" name="code" id="code" value="SELECT AVG(Quantity) as averageProductQuantity
+		FROM OrderDetails;
+        ">
+        <input type="hidden" id="bt" name="bt" value="1">
+      </form>
+      <button class="ws-btn" type="button" onclick="w3schoolsSQLSubmit();uic_r_p();">Run SQL »</button>
+      <h3>Result:</h3>
+      <div id="resultSQL">
+        <iframe id="iframeResultSQL" name="view" style="display: inline;" frameborder="0"></iframe>
+        <div class="w3-white" id="divResultSQL" style="display: none;">
+          <div style="margin:10px;margin-bottom:30px;">Click <b>"Run SQL"</b> to execute the SQL statement above.</div>
+          <div style="margin:10px;">W3Schools has created an SQL database in your browser.</div>		
+          <div style="margin:10px;">The menu to the right displays the database, and will reflect any changes.</div>
+          <div style="margin:10px;">Feel free to experiment with any SQL statement.</div>				
+          <div style="margin:10px;">You can restore the database at any time.</div>
+        </div>
+      </div>	
+      </div>      
+        <h3 style="text-align:center;font-size:16px;">
+    The Try-SQL Editor
+    <span id="buttonshowdesc" class="w3-badge w3-black" style="cursor:pointer;user-select:none" onclick="document.getElementById('descriptionDIV').style.display = 'block';document.getElementById('buttonhidedesc').style.display = '';this.style.display = 'none';">?</span>
+    <span id="buttonhidedesc" class="w3-badge w3-black" style="display:none;cursor:pointer;user-select:none" onclick="document.getElementById('descriptionDIV').style.display = 'none';document.getElementById('buttonshowdesc').style.display = '';this.style.display = 'none';">×</span>    
+    <br>
+    at <a href="https://www.w3schools.com/">w3schools.com</a>
+  </h3>
+  <div id="descriptionDIV" style="text-align:center;display:none;">
+    <div id="nostatementsupport" style="display:none;">
+      <p>This SQL-Statement is not supported in the WebSQL Database.</p>
+      <p>The example still works, because it uses a modified version of SQL.</p>
+    </div>
+    <div id="nobrowsersupport" style="display: block;">
+      <p>Your browser does not support WebSQL.</p>
+      <p>Your are now using a light-version of the Try-SQL Editor, with a read-only Database.</p>
+      <p>If you switch to a browser with WebSQL support, you can try any
+ SQL statement, and play with the Database as much as you like. The 
+Database can also be restored at any time.</p>
+    </div>
+    <div id="yesbrowsersupport" style="display: none;">
+      <p>Our Try-SQL Editor uses WebSQL to demonstrate SQL.</p>			
+      <p>A Database-object is created in your browser, for testing purposes.</p>
+      <p>You can try any SQL statement, and play with the Database as 
+much as you like. The Database can be restored at any time, simply by 
+clicking the "Restore Database" button.</p>
+    </div>
+    <div id="websqlexplain">
+      <h3 style="font-size:16px;">W3C WebSQL</h3>
+      <p>WebSQL stores a Database locally, on the user's computer. Each user gets their own Database object.</p>
+      <h3 style="font-size:16px;">WebSQL Browser Support</h3>
+      <div style="width:180px;margin:auto;margin-bottom:10px;">
+        <div class="chromesupport"> </div>
+        <div class="safarisupport"> </div>
+        <div class="firefoxsupport"> </div>
+        <div class="operasupport"> </div>
+        <div class="iesupport"> </div>
+        <div style="clear:both;"></div>
+      </div>
+      <p>WebSQL is supported in Chrome, Safari, Opera, and Edge(79).</p>
+      <div id="yesbrowsersupport2" style="display: none;">			
+        <p>If you use another browser you will still be able to use our 
+Try SQL Editor, but a different version, using a server-based ASP 
+application, with a read-only Access Database, where users are not 
+allowed to make any changes to the data.</p>
+      </div>
+    </div>
+  </div>
+
+    </div>
+    <div class="w3-col l2 w3-padding">
+      <div id="dbInfo">
+        <div style="font-size:16px;">Your Database:
+        </div>
+        <div>
+          <div id="yourDB" style="margin-top:10px;margin-bottom:20px;"><table class="notranslate" width="100%"><tbody><tr><th style="text-align:left;">Tablenames</th><th style="text-align:right;">Records</th></tr><tr><td style="text-align:left;cursor:pointer;text-decoration:underline;" onclick="w3schoolsNoWebSQLSelectStar('Customers')">Customers</td><td style="text-align:right;">91</td></tr><tr><td style="text-align:left;cursor:pointer;text-decoration:underline;" onclick="w3schoolsNoWebSQLSelectStar('Categories')">Categories</td><td style="text-align:right;">8</td></tr><tr><td style="text-align:left;cursor:pointer;text-decoration:underline;" onclick="w3schoolsNoWebSQLSelectStar('Employees')">Employees</td><td style="text-align:right;">10</td></tr><tr><td style="text-align:left;cursor:pointer;text-decoration:underline;" onclick="w3schoolsNoWebSQLSelectStar('OrderDetails')">OrderDetails</td><td style="text-align:right;">518</td></tr><tr><td style="text-align:left;cursor:pointer;text-decoration:underline;" onclick="w3schoolsNoWebSQLSelectStar('Orders')">Orders</td><td style="text-align:right;">196</td></tr><tr><td style="text-align:left;cursor:pointer;text-decoration:underline;" onclick="w3schoolsNoWebSQLSelectStar('Products')">Products</td><td style="text-align:right;">77</td></tr><tr><td style="text-align:left;cursor:pointer;text-decoration:underline;" onclick="w3schoolsNoWebSQLSelectStar('Shippers')">Shippers</td><td style="text-align:right;">3</td></tr><tr><td style="text-align:left;cursor:pointer;text-decoration:underline;" onclick="w3schoolsNoWebSQLSelectStar('Suppliers')">Suppliers</td><td style="text-align:right;">29</td></tr></tbody></table></div>
+          <div id="yourRC" style="margin-top:10px;margin-bottom:20px;"></div>
+          <div id="yourIX" style="margin-top:10px;margin-bottom:20px;"></div>
+          <button title="Restore the database back to its original content" id="restoreDBBtn" class="w3-btn ws-black w3-round ws-hover-black" type="button" onclick="w3schoolsWebSQL1.w3ClearDatabase()" style="display:none;">Restore Database</button>
+        </div>
+      <div id="sqlstickyadcontainer" style="position:sticky;margin:auto;margin-top:20px;top:0">
+      
+      <!--<pre>sidebar_sticky, desktop: [120,600][160,600][300,600][300,250]</pre>-->
+      <div id="adngin-sidebar_sticky-0-stickypointer" style=""><div id="adngin-sidebar_sticky-0" style="" data-google-query-id="CM74t7m9wfkCFT2T_Qcd6PMGcw"><div id="sn_ad_label_adngin-sidebar_sticky-0" class="sn_ad_label" style="color:#000000;font-size:12px;margin:0;text-align:center;">ADVERTISEMENT</div><div id="google_ads_iframe_/22152718,16833175/sws-hb//w3schools.com//sidebar_sticky_0__container__" style="border: 0pt none; display: inline-block; width: 300px; height: 600px;"><iframe style="border: 0px none; vertical-align: bottom;" src="SQL%20Tryit%20Editor%20v1.6.1_files/container_002.html" id="google_ads_iframe_/22152718,16833175/sws-hb//w3schools.com//sidebar_sticky_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" role="region" aria-label="Advertisement" tabindex="0" data-google-container-id="1" data-load-complete="true" width="300" height="600" frameborder="0"></iframe></div></div></div>
+      <!-- adspace sticky-->
+      <script>
+        function secondSnigel() {
+          if(window.adngin && window.adngin.adnginLoaderReady) {
+            adngin.queue.push(function(){  adngin.cmd.startAuction(["sidebar_sticky"]); });
+          } else {
+            window.addEventListener('adnginLoaderReady', function() {
+              adngin.queue.push(function(){  adngin.cmd.startAuction(["sidebar_sticky"]); });
+            });
+          }
+        }
+      </script>  
+      
+    </div>
+      </div>
+      
+
+    </div>
+  </div>
+</div>
+
+<input type="hidden" id="sSupport" value="">
+<script type="text/javascript">
+function colorcoding() {  
+  var ua = navigator.userAgent;
+  //Opera Mini refreshes the page when trying to edit the textarea.
+  if (ua && ua.toUpperCase().indexOf("OPERA MINI") > -1) { return false; }
+  window.editor = CodeMirror.fromTextArea(document.getElementById("textareaCodeSQL"), {
+    mode: "text/x-sql",
+    htmlMode: true,
+    lineWrapping: true,
+    smartIndent: false,
+    addModeClass: true
+  });
+//  window.editor.on("change", function () {window.editor.save();});
+}
+colorcoding();
+
+
+
+var w3schoolsWebSQLOK = !!window.openDatabase;
+var statementSupport = document.getElementById("sSupport").value;
+if (w3schoolsWebSQLOK === true && statementSupport === "") {
+	w3schoolsWebSQL1 = new w3WebSQLInit();
+} else {
+	var ifr = document.getElementById("iframeResultSQL");
+	var idoc = (ifr.contentWindow || ifr.contentDocument);
+	if (idoc.document) idoc=idoc.document;
+	idoc.write("<div style='margin:10px;font-family:verdana;font-size:12px;'>Click <b>'Run SQL'</b> to execute the SQL statement above.</div>");
+}
+
+function showDescription() {
+	document.getElementById("descriptionDIV").style.display = "block";
+}
+
+function hideDescription() {
+	document.getElementById("descriptionDIV").style.display = "none";
+}
+
+function w3schoolsSQLSubmit() {
+	var txt;
+  if (window.editor) {
+    window.editor.save();
+  }
+	if (w3schoolsWebSQLOK === true && statementSupport === "") {
+		w3schoolsWebSQL1.runSQL();
+	} else {
+		var t=document.getElementById("textareaCodeSQL").value;
+		t=t.replace(/=/gi,"w3equalsign");
+		w3schoolsNoWebSQLSubmit();
+	}
+}
+
+function w3schoolsWriteDBInfo() {
+	var txt;
+	if (w3schoolsWebSQLOK === true && statementSupport === "") {
+		document.getElementById("iframeResultSQL").style.display="none";
+		document.getElementById("divResultSQL").style.display="block";
+		document.getElementById("restoreDBBtn").style.display="inline";
+		document.getElementById("nobrowsersupport").style.display="none";
+		document.getElementById("nostatementsupport").style.display="none";		
+		document.getElementById("yesbrowsersupport").style.display="block";
+		w3schoolsWebSQL1.myDatabase();
+	} else {
+		if (w3schoolsWebSQLOK === true && statementSupport === "-1") {
+			document.getElementById("nostatementsupport").style.display="block";
+			document.getElementById("nobrowsersupport").style.display="none";
+			document.getElementById("yesbrowsersupport").style.display="none";
+			document.getElementById("yesbrowsersupport2").style.display="none";
+			document.getElementById("websqlexplain").style.display="none";			
+			document.getElementById("descriptionDIV").style.display = "block";
+		} else {
+			document.getElementById("nobrowsersupport").style.display="block";
+			document.getElementById("nostatementsupport").style.display="none";
+			document.getElementById("yesbrowsersupport").style.display="none";
+			document.getElementById("yesbrowsersupport2").style.display="none";
+		}
+		document.getElementById("divResultSQL").style.display="none";
+		document.getElementById("iframeResultSQL").style.display="inline";
+		txt = '';
+		txt = txt + '<table width="100%" class="notranslate">';
+		txt = txt + '<tr><th style="text-align:left;">Tablenames</th><th style="text-align:right;">Records</th></tr>';
+		txt = txt + '<tr><td style="text-align:left;cursor:pointer;text-decoration:underline;" onclick="w3schoolsNoWebSQLSelectStar(\'Customers\')">Customers</td>';
+		txt = txt + '<td style="text-align:right;">91</td>';
+		txt = txt + '</tr><tr><td style="text-align:left;cursor:pointer;text-decoration:underline;" onclick="w3schoolsNoWebSQLSelectStar(\'Categories\')">Categories</td>';
+		txt = txt + '<td style="text-align:right;">8</td>';
+		txt = txt + '</tr><tr><td style="text-align:left;cursor:pointer;text-decoration:underline;" onclick="w3schoolsNoWebSQLSelectStar(\'Employees\')">Employees</td>';
+		txt = txt + '<td style="text-align:right;">10</td></tr>';
+		txt = txt + '<tr><td style="text-align:left;cursor:pointer;text-decoration:underline;" onclick="w3schoolsNoWebSQLSelectStar(\'OrderDetails\')">OrderDetails</td>';
+		txt = txt + '<td style="text-align:right;">518</td></tr>';
+		txt = txt + '<tr><td style="text-align:left;cursor:pointer;text-decoration:underline;" onclick="w3schoolsNoWebSQLSelectStar(\'Orders\')">Orders</td>';
+		txt = txt + '<td style="text-align:right;">196</td></tr>';
+		txt = txt + '<tr><td style="text-align:left;cursor:pointer;text-decoration:underline;" onclick="w3schoolsNoWebSQLSelectStar(\'Products\')">Products</td>';
+		txt = txt + '<td style="text-align:right;">77</td></tr>';
+		txt = txt + '<tr><td style="text-align:left;cursor:pointer;text-decoration:underline;" onclick="w3schoolsNoWebSQLSelectStar(\'Shippers\')">Shippers</td>';
+		txt = txt + '<td style="text-align:right;">3</td></tr>';
+		txt = txt + '<tr><td style="text-align:left;cursor:pointer;text-decoration:underline;" onclick="w3schoolsNoWebSQLSelectStar(\'Suppliers\')">Suppliers</td>';
+		txt = txt + '<td style="text-align:right;">29</td></tr>';
+		txt = txt + '</table>';
+		document.getElementById("yourDB").innerHTML = txt;
+	}
+}
+
+function w3schoolsNoWebSQLSelectStar(x) {
+	var sql = "SELECT * FROM " + x + ";";
+	document.getElementById("textareaCodeSQL").value = sql;
+  window.editor.getDoc().setValue(sql);
+	w3schoolsNoWebSQLSubmit();
+}
+
+function w3schoolsNoWebSQLSubmit() {
+	var t = document.getElementById("textareaCodeSQL").value;
+	document.getElementById("code").value = t;
+	
+	t=escape(t);document.getElementById("bt").value="1";
+	
+	  document.getElementById("tryitform").action="https://tryit.w3schools.com/trysql_view.asp?x=" + Math.random();
+  
+	validateForm();
+	document.getElementById("tryitform").submit();
+}
+
+function validateForm() {
+	var code=document.getElementById("code").value;
+	if (code.length>5000) {
+		document.getElementById("code").value="<h1>Error</h1>";
+	}
+}
+w3schoolsWriteDBInfo();
+function docReady(fn) {
+  document.addEventListener("DOMContentLoaded", fn);
+  if (document.readyState === "interactive" || document.readyState === "complete" ) {
+    fn();
+  }
+}
+uic_r_z();
+uic_r_s()
+</script><iframe src="SQL%20Tryit%20Editor%20v1.6.1_files/container_002.html" style="visibility: hidden; display: none;"></iframe>
+
+<iframe style="display: none;" name="__tcfapiLocator"></iframe><iframe style="display: none;" name="__uspapiLocator"></iframe><iframe style="display: none;" src="https://aax-eu.amazon-adsystem.com/s/iu3?cm3ppd=1&amp;d=dtb-pub&amp;csif=t&amp;gdpr=1&amp;gdpr_consent=CPb1pjAPb1pjADlBEAENCXCsAP_AAH_AACiQI4Nf_X__b3_n-_7___t0eY1f9_7__-0zjhfdt-8N3f_X_L8X_2M7vF36tr4KuR4ku3bBIQdtHOncTUmx6olVrzPsbk2cr7NKJ7Pkmnsbe2dYGH9_n93T_ZKZ7______7___________________v____-_____9________________________________8EcACTDVuIAuxLHAk2jCKFECMKwkOoFABRQDC0RWEDq4KdlcBPrCFgAgFQEYEQIMQUYMAgAEAgCQiICQA8EAiAIgEAAIAFQCEABGwCCwAsDAIABQDQsQIoAhAkIMiAiOUwICJEgoJ7KxBKDvY0whDrLACgUf8VCAiUAIVgZCQsHIcASAlwskCzFC-QAjBCgFEAAA&amp;dl=n-index_n-sharethrough_pm-db5_ym_rbd_n-vmg_ox-db5_smrt_n-nativo_an-db5_3lift"></iframe><iframe id="adg-0-sync" marginwidth="0" marginheight="0" scrolling="no" src="https://onetag-sys.com/usync/?pubId=6b859b96c564fbe" style="border: 0px; display: none;" width="0" height="0" frameborder="0"></iframe><img id="adg-1-sync" style="position:absolute; display:none; height:0; width:0;" src="SQL%20Tryit%20Editor%20v1.6.1_files/setuid_002"><iframe src="SQL%20Tryit%20Editor%20v1.6.1_files/syncframe.html" style="border-width: 0px; margin: 0px; display: none;" title="Criteo GUM iframe" width="0" height="0" frameborder="0"></iframe><div><iframe src="SQL%20Tryit%20Editor%20v1.6.1_files/pd.html" style="display:none;" width="0" height="0"></iframe></div><iframe id="adg-2-sync" marginwidth="0" marginheight="0" scrolling="no" src="SQL%20Tryit%20Editor%20v1.6.1_files/index.png" style="border: 0px; display: none;" width="0" height="0" frameborder="0"></iframe><img id="adg-3-sync" style="position:absolute; display:none; height:0; width:0;" src="SQL%20Tryit%20Editor%20v1.6.1_files/setuid"><iframe id="adg-4-sync" marginwidth="0" marginheight="0" scrolling="no" src="SQL%20Tryit%20Editor%20v1.6.1_files/user_sync.html" style="border: 0px; display: none;" width="0" height="0" frameborder="0"></iframe><iframe src="SQL%20Tryit%20Editor%20v1.6.1_files/aframe.html" style="display: none;" width="0" height="0"></iframe><img id="adg-5-sync" style="position:absolute; display:none; height:0; width:0;" src="SQL%20Tryit%20Editor%20v1.6.1_files/server_match.gif"><iframe id="adg-6-sync" marginwidth="0" marginheight="0" scrolling="no" src="SQL%20Tryit%20Editor%20v1.6.1_files/sync_002.html" style="border: 0px; display: none;" width="0" height="0" frameborder="0"></iframe><iframe id="adg-7-sync" marginwidth="0" marginheight="0" scrolling="no" src="https://secure-assets.rubiconproject.com/utils/xapi/multi-sync.html?p=onfocus&amp;endpoint=eu" style="border: 0px; display: none;" width="0" height="0" frameborder="0"></iframe></body><iframe sandbox="allow-scripts allow-same-origin" id="4743b38cf36e2d58" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="SQL%20Tryit%20Editor%20v1.6.1_files/ixmatch.html" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="48c4e6ba4825a2e8" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://eb2.3lift.com/sync?gdpr=true&amp;cmp_cs=CPb1pjAPb1pjADlBEAENCXCsAP_AAH_AACiQI4Nf_X__b3_n-_7___t0eY1f9_7__-0zjhfdt-8N3f_X_L8X_2M7vF36tr4KuR4ku3bBIQdtHOncTUmx6olVrzPsbk2cr7NKJ7Pkmnsbe2dYGH9_n93T_ZKZ7______7___________________v____-_____9________________________________8EcACTDVuIAuxLHAk2jCKFECMKwkOoFABRQDC0RWEDq4KdlcBPrCFgAgFQEYEQIMQUYMAgAEAgCQiICQA8EAiAIgEAAIAFQCEABGwCCwAsDAIABQDQsQIoAhAkIMiAiOUwICJEgoJ7KxBKDvY0whDrLACgUf8VCAiUAIVgZCQsHIcASAlwskCzFC-QAjBCgFEAAA&amp;us_privacy=1---&amp;" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="49991bf99f2c13f" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="SQL%20Tryit%20Editor%20v1.6.1_files/usync_002.html" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="50f6a0d7d82b189" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://eu-u.openx.net/w/1.0/pd?plm=6&amp;ph=8a7ca719-8c2c-4c16-98ad-37ac6dbf26e9&amp;gdpr=1&amp;gdpr_consent=CPb1pjAPb1pjADlBEAENCXCsAP_AAH_AACiQI4Nf_X__b3_n-_7___t0eY1f9_7__-0zjhfdt-8N3f_X_L8X_2M7vF36tr4KuR4ku3bBIQdtHOncTUmx6olVrzPsbk2cr7NKJ7Pkmnsbe2dYGH9_n93T_ZKZ7______7___________________v____-_____9________________________________8EcACTDVuIAuxLHAk2jCKFECMKwkOoFABRQDC0RWEDq4KdlcBPrCFgAgFQEYEQIMQUYMAgAEAgCQiICQA8EAiAIgEAAIAFQCEABGwCCwAsDAIABQDQsQIoAhAkIMiAiOUwICJEgoJ7KxBKDvY0whDrLACgUf8VCAiUAIVgZCQsHIcASAlwskCzFC-QAjBCgFEAAA&amp;us_privacy=1---" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="516c294a482ceac" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="SQL%20Tryit%20Editor%20v1.6.1_files/connectmyusers.html" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="52715de1fa7684c8" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="SQL%20Tryit%20Editor%20v1.6.1_files/user_sync_002.html" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="53e07c759b4ef6b8" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="SQL%20Tryit%20Editor%20v1.6.1_files/async_usersync.html" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="5432ecc9a74b6cd8" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="SQL%20Tryit%20Editor%20v1.6.1_files/check.html" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="55218fa4a5423078" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="SQL%20Tryit%20Editor%20v1.6.1_files/a_005.html" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="56da59f1751bfdf8" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://ap.lijit.com/beacon?gdpr_consent=CPb1pjAPb1pjADlBEAENCXCsAP_AAH_AACiQI4Nf_X__b3_n-_7___t0eY1f9_7__-0zjhfdt-8N3f_X_L8X_2M7vF36tr4KuR4ku3bBIQdtHOncTUmx6olVrzPsbk2cr7NKJ7Pkmnsbe2dYGH9_n93T_ZKZ7______7___________________v____-_____9________________________________8EcACTDVuIAuxLHAk2jCKFECMKwkOoFABRQDC0RWEDq4KdlcBPrCFgAgFQEYEQIMQUYMAgAEAgCQiICQA8EAiAIgEAAIAFQCEABGwCCwAsDAIABQDQsQIoAhAkIMiAiOUwICJEgoJ7KxBKDvY0whDrLACgUf8VCAiUAIVgZCQsHIcASAlwskCzFC-QAjBCgFEAAA&amp;us_privacy=1---&amp;informer=13384613" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="57c5bc17c205b308" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="SQL%20Tryit%20Editor%20v1.6.1_files/a_006.html" width="0" height="0" frameborder="0">
+    </iframe></html>
